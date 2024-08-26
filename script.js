@@ -41,18 +41,20 @@ const playGame = () => {
     return window.alert(message);
   }
 
-  while (count < 5) {
-    playRound();
-  }
+  // while (count < 5) {
+  //   playRound();
+  // }
+  const playButton = document.querySelector("#play-round");
+  playButton.addEventListener("click", playRound);
   if (humanScore > computerScore) {
     return window.alert(`you won the game, ${humanScore}-${computerScore}!`);
   }
   if (computerScore > humanScore) {
     return window.alert(`you lost the game, ${humanScore}-${computerScore}!`);
   }
-  const yourScore = document.querySelector(".your-score");
-  yourScore.textContent = "FOO";
-  return window.alert(`the game is a draw, ${humanScore}-${computerScore}`);
+  // const yourScore = document.querySelector(".your-score");
+  // yourScore.textContent = "FOO";
+  // return window.alert(`the game is a draw, ${humanScore}-${computerScore}`);
 };
 
 playGame();
