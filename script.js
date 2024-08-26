@@ -50,6 +50,8 @@ const playGame = () => {
   if (computerScore > humanScore) {
     return window.alert(`you lost the game, ${humanScore}-${computerScore}!`);
   }
+  const yourScore = document.querySelector(".your-score");
+  yourScore.textContent = "FOO";
   return window.alert(`the game is a draw, ${humanScore}-${computerScore}`);
 };
 
