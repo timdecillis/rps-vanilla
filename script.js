@@ -1,8 +1,6 @@
 import { getComputerChoice, getHumanChoice } from "./helpers.js";
+import { humanScore, computerScore, count } from "./state.js";
 
-let humanScore = 0;
-let computerScore = 0;
-let count = 0;
 const playButton = document.querySelector("#play-round");
 playButton.addEventListener("click", playRound);
 
