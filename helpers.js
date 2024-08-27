@@ -40,7 +40,7 @@ export function playRound() {
     message = `${computerChoice} beats ${humanChoice}, you lose! the score is ${humanScore}-${computerScore}`;
   }
   count++;
-  roundCount.textContent = `Round number: ${count}`;
+  roundCount.textContent = `Rounds left: ${5 - count}`;
   window.alert(message);
   if (count === 5) {
     playButton.disabled = true;
