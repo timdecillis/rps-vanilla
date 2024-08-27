@@ -11,46 +11,48 @@ function getHumanChoice() {
   return choice;
 }
 
-const playGame = () => {
-  let humanScore = 0;
-  let computerScore = 0;
-  let count = 0;
+let humanScore = 0;
+let computerScore = 0;
+let count = 0;
 
-  function playRound() {
-    const winningCombos = {
-      rock: "scissors",
-      paper: "rock",
-      scissors: "paper",
-    };
-    const humanChoice = getHumanChoice().toLowerCase();
-    if (!Object.keys(winningCombos).includes(humanChoice))
-      return window.alert("please enter a valid choice!");
-    const computerChoice = getComputerChoice();
-    let message = "";
+function playRound() {
+  const winningCombos = {
+    rock: "scissors",
+    paper: "rock",
+    scissors: "paper",
+  };
+  const humanChoice = getHumanChoice().toLowerCase();
+  if (!Object.keys(winningCombos).includes(humanChoice))
+    return window.alert("please enter a valid choice!");
+  const computerChoice = getComputerChoice();
+  let message = "";
 
-    if (humanChoice === computerChoice) {
-      message = "draw";
-    } else if (computerChoice === winningCombos[humanChoice]) {
-      humanScore++;
-      message = `${humanChoice} beats ${computerChoice}, you win! the score is ${humanScore}-${computerScore}`;
-    } else {
-      computerScore++;
-      message = `${computerChoice} beats ${humanChoice}, you lose! the score is ${humanScore}-${computerScore}`;
-    }
-    count++;
-    return window.alert(message);
+  if (humanChoice === computerChoice) {
+    message = "draw";
+  } else if (computerChoice === winningCombos[humanChoice]) {
+    humanScore++;
+    message = `${humanChoice} beats ${computerChoice}, you win! the score is ${humanScore}-${computerScore}`;
+  } else {
+    computerScore++;
+    message = `${computerChoice} beats ${humanChoice}, you lose! the score is ${humanScore}-${computerScore}`;
   }
+  count++;
+  return window.alert(message);
+}
 
+const playGame = () => {
   // while (count < 5) {
   //   playRound();
   // }
   const playButton = document.querySelector("#play-round");
   playButton.addEventListener("click", playRound);
-  if (humanScore > computerScore) {
-    return window.alert(`you won the game, ${humanScore}-${computerScore}!`);
-  }
-  if (computerScore > humanScore) {
-    return window.alert(`you lost the game, ${humanScore}-${computerScore}!`);
+  if (count === 5) {
+    if (humanScore > computerScore) {
+      return window.alert(`you won the game, ${humanScore}-${computerScore}!`);
+    }
+    if (computerScore > humanScore) {
+      return window.alert(`you lost the game, ${humanScore}-${computerScore}!`);
+    }
   }
   // const yourScore = document.querySelector(".your-score");
   // yourScore.textContent = "FOO";
