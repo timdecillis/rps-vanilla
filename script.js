@@ -1,11 +1,4 @@
-import { getComputerChoice } from "./helpers.js";
-
-function getHumanChoice() {
-  const choice = window.prompt(
-    "please enter a choice of rock, paper, or scissors"
-  );
-  return choice;
-}
+import { getComputerChoice, getHumanChoice } from "./helpers.js";
 
 let humanScore = 0;
 let computerScore = 0;
