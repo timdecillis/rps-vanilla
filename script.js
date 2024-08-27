@@ -1,4 +1,4 @@
-import { getComputerChoice } from "./helpers";
+import { getComputerChoice } from "./helpers.js";
 
 function getHumanChoice() {
   const choice = window.prompt(
