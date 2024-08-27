@@ -1,3 +1,5 @@
-export let humanScore = 0;
-export let computerScore = 0;
-export let count = 0;
+export const state = {
+  humanScore: 0,
+  computerScore: 0,
+  count: 0,
+};
