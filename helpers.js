@@ -44,6 +44,7 @@ export function playRound() {
   window.alert(message);
   if (count === 5) {
     playButton.disabled = true;
+    document.querySelector("#welcome").textContent = "The Game is Over";
     if (humanScore > computerScore) {
       return window.alert(`you won the game, ${humanScore}-${computerScore}!`);
     }
